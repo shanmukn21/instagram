@@ -30,7 +30,9 @@
 
         #dcret {
             min-width: 317.5px;
+            grid-area: 1 / 1 / 6 / 2;
         }
+
 
         #cretr {
             min-width: 600px;
@@ -46,22 +48,39 @@
 
         #hdr {
             min-width: 935px;
+            display: grid;
         }
 
         #nameh {
+            grid-area: 1 / 2 / 2 / 3;
             align-items: center;
+        }
+
+        #accd {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+
+        #msd {
+            grid-area: 3 / 2 / 4 / 2;
+        }
+
+        #threads {
+            grid-area: 4 / 2 / 5 / 2;
+        }
+
+        #kf {
+            grid-area: 5 / 2 / 6 / 5;
         }
 
         #nameh,
         #accd,
-        #sect,
-        #hdr {
+        #sect {
             display: flex;
             flex-direction: row;
         }
 
         #cret {
-            margin: 25px 75px 25px 75px;
+            margin: 25px 75px;
             min-width: 150px;
             min-height: 150px;
             max-width: 150px;
@@ -79,16 +98,8 @@
             font-size: 14px;
             background-color: #363636;
             border-radius: 16px;
-            padding: 6px 16px;
+            padding: 7px 7px;
             max-width: fit-content;
-        }
-
-        #nameh p {
-            margin: 20px 8px 20px 0px;
-        }
-
-        #accd p {
-            margin-right: 32px;
         }
 
         #msd {
@@ -98,7 +109,7 @@
 
         #kf {
             margin-top: 20px;
-            margin-bottom: 64px;
+            margin-bottom: 50px;
             font-size: 12px;
             color: #A8A8A8;
             font-weight: 700;
@@ -108,16 +119,10 @@
             color: white;
         }
 
-        #sect {
-            min-width: 300px;
-            max-width: 300px;
-            justify-content: space-between;
-        }
-
         header {
             justify-content: left;
             padding-top: 16px;
-            border-bottom: 1px solid rgb(114, 114, 114);
+            border-bottom: 0.8px solid rgb(38, 38, 38);
         }
 
         #sect p {
@@ -128,16 +133,17 @@
         }
 
         section {
+            min-width: 935px;
             max-width: 935px;
-            display: flex;
-            flex-wrap: wrap;
             gap: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, 3fr);
+            grid-template-rows: repeat(6, 3fr);
         }
 
         section div {
-            min-width: 303px;
-            min-height: 303px;
             background-color: white;
+            aspect-ratio: 1 / 1;
         }
 
         #follow,
@@ -153,9 +159,176 @@
             max-width: 16px;
             max-height: 16px;
         }
-        #mre{
+
+        #mre {
             max-width: 32px;
             max-height: 32px;
+        }
+
+        @media (min-width: 601px) and (max-width: 935px) {
+            header{
+                width: 100%;
+            }
+            #hdr{
+                min-width: 100%;
+                max-width: 100%;
+            }
+            section {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            #cret{
+                margin: 25px 4.5rem;
+            }
+            #dcret{
+                min-width: 0px;
+            }#sect {
+                width: 30%;
+                max-width: 30%;
+                min-width: 30%;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 700px) {
+            
+            #cret{
+                margin: 25px 1.4rem;
+            }
+        }
+        @media (min-width:600px) {
+            #nameh p {
+                margin: 20px 8px 20px 0px;
+            }
+
+            #accd p {
+                margin-right: 32px;
+            }
+
+            #sect {
+                justify-content: space-between;
+            }
+        }
+        @media(min-width:935px){
+            #sect{
+                min-width: 300px;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width:600px) {
+
+            header,
+            #sect {
+                width: 100%;
+            }
+
+            #sect {
+                justify-content: space-around;
+            }
+
+            #hdr {
+                width: 100%;
+            }
+
+            #dcret {
+                margin-left: 16px;
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            #msd {
+                margin-left: 16px;
+                grid-area: 3 / 1 / 4 / 2;
+            }
+
+            #threads {
+                margin-left: 16px;
+                padding: 8px 7px;
+                grid-area: 4 / 1 / 5 / 2;
+            }
+
+            #kf {
+                margin-left: 16px;
+                grid-area: 5 / 1 / 6 / 5;
+                margin-bottom: 20px;
+            }
+
+            #accd {
+                grid-area: 6 / 1 / 7 / 5;
+                border-top: 0.8px solid rgb(38, 38, 38);
+                display: grid;
+                grid-template-columns: repeat(3, 3fr);
+                padding: 12px 0px;
+
+            }
+
+            #accd p {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #nameh {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+            }
+
+            #name {
+                margin: 0px;
+                grid-area: 1 / 1 / 2 / 2;
+                padding-right: 0px;
+            }
+
+            #mre {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+
+            #follow {
+                margin: 20px 8px 20px 0px;
+                grid-area: 2 / 1 / 3 / 2;
+            }
+
+            #message {
+                margin: 20px 8px 20px 0px;
+                grid-area: 2 / 2 / 3 / 3;
+            }
+
+            #perp {
+                grid-area: 2 / 3 / 3 / 4;
+            }
+
+            #hdr {
+                min-width: 100%;
+            }
+
+            #dcret {
+                min-width: 76px;
+                min-height: 92px;
+            }
+
+            #msd {
+                margin-top: 0px;
+            }
+
+            #cret {
+                margin: 0px;
+                min-width: 77px;
+                min-height: 77px;
+                max-width: 77px;
+                max-height: 77px;
+            }
+
+            #cretr {
+                min-width: 0px;
+                max-width: 300px;
+                overflow: hidden;
+                width: fit-content;
+            }
+
+            section {
+                max-width: 100%;
+                min-width: 100%;
+                gap: 5px;
+            }
         }
     </style>
 </head>
@@ -168,44 +341,42 @@
                 <div id="dcret">
                     <div id="cret"></div>
                 </div>
-                <div id="cretr">
-                    <div id="nameh">
-                        <p id="name">mahi7781</p>
-                        <p id="follow">Following</p>
-                        <p id="message">Message</p>
-                        <p id="perp">
-                            <svg aria-label="Similar accounts" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor"
-                                height="16" role="img" viewBox="0 0 24 24" width="16">
-                                <title>Similar accounts</title>
-                                <path d="M19.006 8.252a3.5 3.5 0 1 1-3.499-3.5 3.5 3.5 0 0 1 3.5 3.5Z" fill="none"
-                                    stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
-                                <path
-                                    d="M22 19.5v-.447a4.05 4.05 0 0 0-4.05-4.049h-4.906a4.05 4.05 0 0 0-4.049 4.049v.447"
-                                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2"></path>
-                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
-                                    stroke-width="2" x1="5.001" x2="5.001" y1="7.998" y2="14.003"></line>
-                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
-                                    stroke-width="2" x1="8.004" x2="2.003" y1="11" y2="11"></line>
-                            </svg>
-                        </p>
-                        <p id="mre"><svg aria-label="Options" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="32"
-                                role="img" viewBox="0 0 24 24" width="32">
-                                <title>Options</title>
-                                <circle cx="12" cy="12" r="1.5"></circle>
-                                <circle cx="6" cy="12" r="1.5"></circle>
-                                <circle cx="18" cy="12" r="1.5"></circle>
-                            </svg></p>
-                    </div>
-                    <div id="accd">
-                        <p><b>110 posts</b></p>
-                        <p><b>48.8M followers</b></p>
-                        <p><b>4 following</b></p>
-                    </div>
-                    <p id="msd"><b>M S Dhoni</b></p>
-                    <p id="threads">mahi7781</p>
-                    <p id="kf">Followed by <b>praneethsaisuda</b> and <b>m.srivc0311</b></p>
+                <div id="nameh">
+                    <p id="name">mahi7781</p>
+                    <p id="follow">Following</p>
+                    <p id="message">Message</p>
+                    <p id="perp">
+                        <svg aria-label="Similar accounts" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor"
+                            height="16" role="img" viewBox="0 0 24 24" width="16">
+                            <title>Similar accounts</title>
+                            <path d="M19.006 8.252a3.5 3.5 0 1 1-3.499-3.5 3.5 3.5 0 0 1 3.5 3.5Z" fill="none"
+                                stroke="currentColor" stroke-miterlimit="10" stroke-width="2"></path>
+                            <path d="M22 19.5v-.447a4.05 4.05 0 0 0-4.05-4.049h-4.906a4.05 4.05 0 0 0-4.049 4.049v.447"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                stroke-width="2" x1="5.001" x2="5.001" y1="7.998" y2="14.003"></line>
+                            <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
+                                stroke-width="2" x1="8.004" x2="2.003" y1="11" y2="11"></line>
+                        </svg>
+                    </p>
+                    <p id="mre"><svg aria-label="Options" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor"
+                            height="32" role="img" viewBox="0 0 24 24" width="32">
+                            <title>Options</title>
+                            <circle cx="12" cy="12" r="1.5"></circle>
+                            <circle cx="6" cy="12" r="1.5"></circle>
+                            <circle cx="18" cy="12" r="1.5"></circle>
+                        </svg></p>
                 </div>
+                <div id="accd">
+                    <p><b>110 </b>posts</p>
+                    <p><b>48.8M </b>followers</p>
+                    <p><b>4 </b>following</p>
+                </div>
+                <p id="msd"><b>M S Dhoni</b></p>
+                <p id="threads">@mahi7781</p>
+                <p id="kf">Followed by <b>praneethsaisuda</b> and <b>m.srivc0311</b></p>
+
             </div>
 
         </header>
@@ -215,6 +386,24 @@
             <p>TAGGED</p>
         </div>
         <section>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
