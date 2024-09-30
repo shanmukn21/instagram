@@ -29,13 +29,7 @@
         }
 
         #dcret {
-            min-width: 317.5px;
             grid-area: 1 / 1 / 6 / 2;
-        }
-
-
-        #cretr {
-            min-width: 600px;
         }
 
         header {
@@ -80,7 +74,7 @@
         }
 
         #cret {
-            margin: 25px 75px;
+            margin: 25px auto;
             min-width: 150px;
             min-height: 150px;
             max-width: 150px;
@@ -165,37 +159,29 @@
             max-height: 32px;
         }
 
-        @media (min-width: 601px) and (max-width: 935px) {
-            header{
-                width: 100%;
+        @media (max-width:935px) {
+            section{
+                min-width: 100%;
+                max-width: 100%;
             }
             #hdr{
                 min-width: 100%;
                 max-width: 100%;
             }
-            section {
+            header{
                 min-width: 100%;
                 max-width: 100%;
             }
-            #cret{
-                margin: 25px 4.5rem;
-            }
-            #dcret{
-                min-width: 0px;
-            }#sect {
-                width: 30%;
-                max-width: 30%;
-                min-width: 30%;
+            #sect{
+                width:32%;
             }
         }
 
-        @media (min-width: 601px) and (max-width: 700px) {
-            
-            #cret{
-                margin: 25px 1.4rem;
+        @media (min-width:767px) {
+            #hdr {
+                grid-template-columns: 1fr 2fr;
             }
-        }
-        @media (min-width:600px) {
+
             #nameh p {
                 margin: 20px 8px 20px 0px;
             }
@@ -208,14 +194,18 @@
                 justify-content: space-between;
             }
         }
-        @media(min-width:935px){
-            #sect{
+
+        @media(min-width:935px) {
+            #sect {
                 min-width: 300px;
                 max-width: 300px;
             }
         }
 
-        @media (max-width:600px) {
+        @media (max-width:767px) {
+            #hdr {
+                grid-template-columns: 1fr 5fr;
+            }
 
             header,
             #sect {
@@ -269,7 +259,7 @@
 
             #nameh {
                 display: grid;
-                grid-template-columns: auto auto auto auto auto;
+                grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
             }
 
             #name {
